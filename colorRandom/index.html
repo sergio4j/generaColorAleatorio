@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Color Ramdom JS</title>
+  </head>
+  <body>
+    <div class="color">
+      <span id="Ncolor">#23ac35 </span>
+      <button onclick="nuevoColor()">Generar nuevo color</button>
+    </div>
+    <script>
+      function nuevoColor() {
+        let aleatorio, color;
+        aleatorio = "0123456789ABCDEF";
+        color = "#";
+        /*En el bucle ponemos el maximo de 6 para generar el color Por ejemplo:
+            #FF5733 como vemos lo que genera aleatoriamente son 6 maximo si no no mostraria el color
+            */
+        for (var i = 0; i < 6; i++) {
+         
+          /*Math.floor nos Devuelve el máximo entero menor o
+             igual a un número del Random.
+             Ejemplo Ramdom por si solo devolveria quizas 26,15 Con Math.floor
+             El numero se queda en el mas cerano en este caso 26.
+             */
+          color = color + aleatorio[Math.floor(Math.random() * 16)];
+        }
+        document.body.style.background = color;
+        document.getElementById("Ncolor").innerHTML = color;
+      }
+    </script>
+    <link rel="stylesheet" href="estilo.css" />
+  </body>
+</html>
